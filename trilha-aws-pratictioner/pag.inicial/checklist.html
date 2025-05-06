@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist de Estudo AWS Cloud Practitioner</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo"><strong>Escola da Nuvem</strong></div>
+    <nav>
+        <a href="pag-inicial.html">Inicio</a>
+      <a href="cards.html">Cards</a>
+      <a href="Apresentação_grupo_01/index.html">Sobre</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Dashboard de Estudo AWS Cloud Practitioner</h1>
+    <p>Gerencie suas metas, progresso e temas de estudo.</p>  
+    <!-- Metas de Estudo -->
+    <div class="card">
+      <h2>Metas de Estudo</h2>
+      <input type="text" id="metaInput" placeholder="Digite sua meta de estudo">
+      <button onclick="adicionarMeta()">Adicionar Meta</button>
+      <ul id="metaList"></ul>
+    </div>
+
+    <!-- Barra de Progresso -->
+    <div class="card">
+      <h2>Progresso</h2>
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p id="progressoText">0% Concluído</p>
+    </div>
+
+
+    <!-- Links Úteis -->
+    <div class="card">
+      <h2>Links Úteis</h2>
+      <ul>
+        <li><a href="https://aws.amazon.com/training/course-descriptions/aws-cloud-practitioner/">Curso AWS Cloud Practitioner</a></li>
+        <li><a href="https://docs.aws.amazon.com/pt_br/">Documentação da AWS</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

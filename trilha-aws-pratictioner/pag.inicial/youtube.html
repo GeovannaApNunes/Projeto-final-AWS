@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Curso em Vídeo - Playlist</title>
+  <link rel="stylesheet" href="styles/youtube.css">
+</head>
+<body>
+
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+  <div class="container">
+    <div class="sidebar" id="sidebar">
+      <div class="playlist-item" data-video="https://youtu.be/LeI8hCMbvoY" data-titulo="Aula 1 - AWS Cloud Practitioner CLF-C02 NOVO EXAME">Aula 1 - AWS Cloud Practitioner CLF-C02 NOVO EXAME</div>
+      <div class="playlist-item" data-video="https://youtu.be/Ri-FAfvvLjw?si=3Ekcrrfbz8FpEf4a" data-titulo="Aula 2 - Aprofundando na AWS: IAM, CloudShell, AW CLI, SDK Cloud Practitioner NOVO EXAME CLF-C02">Aula 2 - Aprofundando na AWS: IAM, CloudShell, AW CLI, SDK Cloud Practitioner NOVO EXAME CLF-C02.</div>
+      <div class="playlist-item" data-video="https://youtu.be/CqtC5_sMd90?si=wLs9hLygQEsaflwo" data-titulo="Aula 3 -  Aprofundando na AWS: Regiões, AZ, Zonas Locais, Wavelenght, Outposts CLF-C02">Aula 3 -  Aprofundando na AWS: Regiões, AZ, Zonas Locais, Wavelenght, Outposts CLF-C02</div>
+    </div>
+
+    <div class="main">
+      <div class="titulo-video" id="tituloVideo">Aula 1 - AWS Cloud Practitioner CLF-C02 NOVO EXAME</div>
+
+      <!-- Ambos os players, visibilidade controlada pelo JS -->
+      <video id="videoPlayer" controls style="display: none;"></video>
+      <iframe id="videoFrame" style="display: none;" allowfullscreen></iframe>
+
+      <div class="controls">
+        <button class="btn" onclick="voltar()">◀ Voltar</button>
+        <button class="btn" onclick="marcarConcluido()">✔ Concluído</button>
+        <button class="btn" onclick="proximo()">Próximo ▶</button>
+      </div>
+      <div class="contador">Assistidos: <span id="contador">0</span></div>
+    </div>
+  </div>
+
+  <script src="js/youtube.js"></script>
+</body>
+</html>

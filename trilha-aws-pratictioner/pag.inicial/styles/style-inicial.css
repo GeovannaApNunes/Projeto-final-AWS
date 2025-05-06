@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #add8e6; /* azul claro */
+}
+
+/* Header */
+header {
+  background-color: #d8b4f8; /* lilás suave */
+  color: #1c1d1f;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #1c1d1f;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #1c1d1f;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #ffffff;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #444;
+}
+
+.grafico-section {
+      background-color: #f4f4f4;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .grafico-section h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    canvas {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .grafico-section {
+      background-color: #f4f4f4;
+      padding: 40px 20px;
+      text-align: center;
+    }
+  
+    .grafico-section h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 30px;
+    }
+  
+    canvas {
+      max-width: 350px; /* Reduzido de 500px para 350px */
+      width: 100%;
+      margin: 0 auto;
+    }
+
+/* Cursos Section */
+.cursos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 30px;
+  background: #f0f8ff; /* um tom bem clarinho de azul */
+}
+
+.curso {
+  width: 280px;
+  border: 1px solid #d8b4f8; /* lilás suave */
+  border-radius: 8px;
+  margin: 15px;
+  padding: 15px;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease;
+}
+
+.curso:hover {
+  box-shadow: 0 4px 10px rgba(216, 180, 248, 0.3); /* lilás suave com transparência */
+}
+
+.curso img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.curso h3 {
+  margin: 10px 0;
+  color: #1c1d1f;
+}
+
+.curso p {
+  color: #555;
+}
+
+.btn-personalizado {
+  background-color: #d8b4f8; /* lilás suave */
+  color: #1c1d1f;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.btn-personalizado a{
+  color: #1c1d1f; /* cor do texto do link */
+  text-decoration: none; /* remove o sublinhado do link */
+}
+
+.btn-personalizado:hover {
+  background-color: #add8e6; /* azul claro */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}

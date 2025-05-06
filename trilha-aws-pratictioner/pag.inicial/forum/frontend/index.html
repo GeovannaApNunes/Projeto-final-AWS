@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fórum Estilo re:Post</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Fórum Estilo re:Post</h1>
+  </header>
+  <main>
+    <nav>
+      <h2>Categorias</h2>
+      <ul>
+        <li onclick="filtrarCategoria('AWS')">AWS</li>
+        <li onclick="filtrarCategoria('Frontend')">Frontend</li>
+        <li onclick="filtrarCategoria('Backend')">Backend</li>
+        <li onclick="filtrarCategoria('Outros')">Outros</li>
+      </ul>
+    </nav>
+    <section id="conteudo">
+      <div class="form-container">
+        <h2>Postar uma dúvida</h2>
+        <input type="text" id="titulo" placeholder="Título da dúvida">
+        <select id="categoria">
+          <option value="">Escolha uma categoria</option>
+          <option value="AWS">AWS</option>
+          <option value="Frontend">Frontend</option>
+          <option value="Backend">Backend</option>
+          <option value="Outros">Outros</option>
+        </select>
+        <textarea id="descricao" rows="4" placeholder="Descreva sua dúvida..."></textarea>
+        <button onclick="postarDuvida()">Postar</button>
+      </div>
+      <div id="topicos"></div>
+    </section>
+  </main>
+
+  <script>
+    let topicos = [];
+    let categoriaAtual = '';
+
+    function postarDuvida() {
+      const titulo = document.getElementById('titulo').value;
+      const categoria = document.getElementById('categoria').value;
+      const descricao = document.getElementById('descricao').value;
+
+      if (!titulo || !categoria || !descricao) {
+        alert('Preencha todos os campos!');
+        return;
+      }
+
+      topicos.push({ titulo, categoria, descricao, respostas: [] });
+      document.getElementById('titulo').value = '';
+      document.getElementById('categoria').value = '';
+      document.getElementById('descricao').value = '';
+
+      mostrarTopicos();
+    }
+
+    function mostrarTopicos() {
+      const container = document.getElementById('topicos');
+      container.innerHTML = '';
+
+      topicos
+        .filter(t => categoriaAtual === '' || t.categoria === categoriaAtual)
+        .forEach((t, i) => {
+          const div = document.createElement('div');
+          div.className = 'question-card';
+
+          div.innerHTML = `
+            <h3>${t.titulo}</h3>
+            <p class="question-meta">Categoria: ${t.categoria}</p>
+            <p>${t.descricao}</p>
+            <button onclick="toggleRespostas(${i})">Mostrar respostas</button>
+            <div id="respostas-${i}" class="respostas" style="display:none;"></div>
+            <textarea id="resposta-${i}" rows="2" placeholder="Escreva uma resposta..."></textarea>
+            <button onclick="responder(${i})">Responder</button>
+          `;
+
+          container.appendChild(div);
+        });
+    }
+
+    function responder(index) {
+      const resposta = document.getElementById(`resposta-${index}`).value.trim();
+      if (!resposta) return;
+
+      topicos[index].respostas.push(resposta);
+      document.getElementById(`resposta-${index}`).value = '';
+      mostrarRespostas(index);
+    }
+
+    function mostrarRespostas(index) {
+      const div = document.getElementById(`respostas-${index}`);
+      div.innerHTML = '';
+      topicos[index].respostas.forEach(r => {
+        const p = document.createElement('p');
+        p.textContent = r;
+        div.appendChild(p);
+      });
+    }
+
+    function toggleRespostas(index) {
+      const div = document.getElementById(`respostas-${index}`);
+      const display = div.style.display;
+      if (display === 'none') {
+        mostrarRespostas(index);
+        div.style.display = 'block';
+      } else {
+        div.style.display = 'none';
+      }
+    }
+
+    function filtrarCategoria(cat) {
+      categoriaAtual = cat;
+      mostrarTopicos();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+header {
+  background-color: #003366;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+nav {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 0.8rem;
+  color: #0366d6;
+  cursor: pointer;
+}
+
+section#conteudo {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+  margin-bottom: 2rem;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.form-container button {
+  background-color: #0366d6;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.question-card {
+  background-color: #f1f3f5;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.question-card h3 {
+  color: #003366;
+}
+
+.question-meta {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.respostas {
+  margin-top: 1rem;
+  background-color: #e9ecef;
+  padding: 1rem;
+  border-radius: 6px;}
+  
+/* Formulário de nova dúvida */
+#novaDuvida {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#novaDuvida h2 {
+  margin-bottom: 20px;
+}
+
+.campo {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dcdfe4;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #0073bb;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+/* Mensagens de status */
+#mensagem {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+/* Lista de Tópicos */
+#feedForum {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#feedForum h2 {
+  margin-bottom: 20px;
+}
+
+.topico {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fdfdfd;
+  transition: background 0.3s;
+}
+
+.topico:hover {
+  background-color: #f3f9ff;
+}
+
+.topico h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #0073bb;
+}
+
+.topico p {
+  margin-bottom: 8px;
+}
+
+.respostas {
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+.resposta {
+  border-left: 3px solid #0073bb;
+  background-color: #f5f9fc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+textarea[id^="resposta-"] {
+  margin-top: 10px;
+}
+
+/* Animação de toggle (opcional) */
+.respostas.mostrar {
+  display: block;
+}
+
+.respostas:not(.mostrar) {
+  display: none;
+}
