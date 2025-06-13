@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #fff;
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh; /* garante que ocupa 100% da altura da tela */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vh;  /* porque rotacionamos */
+    height: 100vw;
+    z-index: -1;
+
+    background-image: 
+        linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), rgba(128, 0, 128, 0.5)),
+        url(/main/src/assents/fundo\ tec.jpeg.jpg);
+    
+    background-size: cover;
+    background-position: center;
+
+    transform: rotate(-90deg) translateX(-100%) scale(1.05);
+    transform-origin: top left;
+}
+
+
+ /* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo img {
+  height: 50px; /* aumenta um pouco para equilibrar */
+  margin-bottom: 30px;
+}
+
+.img-inicial {
+  display: flex;
+  justify-content: center;
+  margin-left: 200px; /* ao invés de transform, cria espaço real */
+}
+
+.img-inicial img {
+  height: 65px; /* WAYS um pouco maior */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e0e0e0;
+}
+
+.sign-in {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sign-in:hover {
+  background-color: #867f7f;
+}
+
+/* Linha divisória */
+hr {
+  all: unset;  /* Reseta tudo */
+  display: block;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  width: 0;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  transition: width 0.3s ease;
+  flex-shrink: 0;
+    overflow-y: auto; /* ✅ permite rolagem vertical */
+  padding: 20px 0;
+}
+
+.sidebar.open {
+  width: 300px;
+}
+
+.playlist-item {
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.playlist-item:hover {
+  background-color: #292929;
+}
+
+.playlist-item.assistido {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hamburger {
+  position: absolute;
+  top: 50px;
+  left: 6px;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.hamburger:hover {
+  background: #333;
+}
+
+#videoFrame {
+  width: 90%;
+  max-width: 960px;
+  height: 540px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #444;
+}
+
+.titulo-video {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column; /* um abaixo do outro */
+  align-items: center;
+  gap: 20px; /* espaçamento entre vídeo e contador */
+  margin: 40px 0;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column; /* elementos um abaixo do outro */
+  align-items: center; /* centraliza tudo */
+  gap: 20px; /* espaço entre vídeo e contador */
+  margin: 40px 0;
+}
+
+iframe {
+  max-width: 100%;
+  height: auto; /* responsividade */
+  display: block;
+}
+
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* ✅ mais espaço */
+  margin: 40px 0;
+  padding: 20px; /* ✅ mais respiro */
+}
+
+main {
+    flex: 1; /* faz o conteúdo principal ocupar o espaço disponível */
+}
+
+.footer-bottom {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;  /* melhor centralizar */
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    width: 100%;
+    background: var(--dark-blue);
+}

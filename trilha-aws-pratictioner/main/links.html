@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Materiais Extras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/links.css">
+   <link rel="shortcut icon" href="/main/src/assents/ways.png" type="image/x-icon">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+   <div class="background"></div>
+
+   <header>
+  <div class="logo">
+    <img src="src/assents/logo.png" alt="Logo">
+  </div>
+
+  <div class="img-inicial">
+    <img src="src/assents/ways.png" alt="WAYS">
+  </div>
+
+  <nav>
+    <a href="pag-inicial.html">Inicio</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="cards.html">Cards</a>
+    <a href="Apresentação_grupo_01/index.html">Sobre</a>
+    <a href="login.html" class="sign-in">Sign in</a>
+  </nav>
+</header>
+
+<hr>
+
+<div class="hero">
+  <h1>Materiais Extras</h1>
+  <p>Compartilhe e descubra conteúdos sobre AWS</p>
+</div>
+
+<form id="contentForm">
+  <label for="title">Título:</label>
+  <input type="text" id="title" required />
+
+  <label for="type">Tipo de conteúdo:</label>
+  <select id="type" required>
+    <option value="">Selecione</option>
+    <option value="artigo">Artigo</option>
+    <option value="link">Link</option>
+    <option value="video">Vídeo do YouTube</option>
+  </select>
+
+  <label for="url">URL (link ou vídeo):</label>
+  <input type="url" id="url" required placeholder="https://..." />
+
+  <label for="description">Descrição (opcional):</label>
+  <textarea id="description" rows="3"></textarea>
+
+  <button type="submit">Adicionar conteúdo</button>
+</form>
+
+<!-- Barra de pesquisa -->
+<div id="searchContainer" role="search" aria-label="Filtrar conteúdos">
+  <input type="text" id="searchInput" placeholder="Pesquisar por título..." aria-label="Pesquisar por título" />
+  <select id="filterType" aria-label="Filtrar por tipo de conteúdo">
+    <option value="todos" selected>Todos os tipos</option>
+    <option value="artigo">Artigos</option>
+    <option value="link">Links</option>
+    <option value="video">Vídeos</option>
+  </select>
+</div>
+
+<div id="contentList" aria-live="polite" aria-relevant="additions">
+</div>
+
+
+    <footer>
+        <div class="footer-bottom">
+         <p> WAYS  &copy;2025 - Todos os direitos reservados.</p>
+        </div>
+      </footer>
+
+<script>
+  const form = document.getElementById('contentForm');
+  const contentList = document.getElementById('contentList');
+  const searchInput = document.getElementById('searchInput');
+  const filterType = document.getElementById('filterType');
+
+  // Função para extrair ID do YouTube
+  function extractYouTubeID(url) {
+    const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|embed|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  }
+
+  // Função para criar um item no DOM
+  function createContentItem({ title, type, url, description }) {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'content-item';
+    itemDiv.dataset.title = title.toLowerCase();
+    itemDiv.dataset.type = type;
+
+    const titleEl = document.createElement('h3');
+    const linkEl = document.createElement('a');
+    linkEl.href = url;
+    linkEl.target = '_blank';
+    linkEl.rel = 'noopener noreferrer';
+    linkEl.textContent = title;
+    titleEl.appendChild(linkEl);
+    itemDiv.appendChild(titleEl);
+
+    if (description) {
+      const descEl = document.createElement('p');
+      descEl.textContent = description;
+      itemDiv.appendChild(descEl);
+    }
+
+    if (type === 'video') {
+      const videoId = extractYouTubeID(url);
+      if (videoId) {
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${videoId}`;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        itemDiv.appendChild(iframe);
+      } else {
+        const errorMsg = document.createElement('p');
+        errorMsg.style.color = 'red';
+        errorMsg.textContent = 'URL de vídeo do YouTube inválida.';
+        itemDiv.appendChild(errorMsg);
+      }
+    }
+
+    contentList.prepend(itemDiv);
+  }
+
+  // Carregar conteúdos salvos
+  function loadContents() {
+    const saved = localStorage.getItem('materiaisExtras');
+    if (saved) {
+      const contents = JSON.parse(saved);
+      contents.forEach(item => createContentItem(item));
+    }
+  }
+
+  // Salvar conteúdos
+  function saveContent(item) {
+    const saved = localStorage.getItem('materiaisExtras');
+    const contents = saved ? JSON.parse(saved) : [];
+    contents.unshift(item);
+    localStorage.setItem('materiaisExtras', JSON.stringify(contents));
+  }
+
+  // Submissão do formulário
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const title = document.getElementById('title').value.trim();
+    const type = document.getElementById('type').value;
+    const url = document.getElementById('url').value.trim();
+    const description = document.getElementById('description').value.trim();
+
+    if (!title || !type || !url) {
+      alert('Por favor, preencha todos os campos obrigatórios.');
+      return;
+    }
+
+    const newItem = { title, type, url, description };
+
+    createContentItem(newItem);
+    saveContent(newItem);
+
+    form.reset();
+  });
+
+  // Função de filtro
+  function filterContent() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedType = filterType.value;
+
+    const items = contentList.querySelectorAll('.content-item');
+
+    items.forEach(item => {
+      const itemTitle = item.dataset.title;
+      const itemType = item.dataset.type;
+
+      const matchesSearch = itemTitle.includes(searchTerm);
+      const matchesType = selectedType === 'todos' || itemType === selectedType;
+
+      item.style.display = (matchesSearch && matchesType) ? 'block' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterContent);
+  filterType.addEventListener('change', filterContent);
+
+  // Inicializa carregando os conteúdos
+  loadContents();
+</script>
+
+
+</body>
+</html>

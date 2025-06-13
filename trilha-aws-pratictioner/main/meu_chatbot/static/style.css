@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --dark-blue: #1A0D3B;
+    --purple-gradient-start: #3A1F7B;
+    --purple-gradient-end: #1A0D3B;
+    --message-bubble-bg-user: #4B3A8B; /* Cor dos balões do usuário */
+    --message-bubble-bg-ia: #6B4DAB; /* Cor dos balões da IA */
+    --text-color: #E0E0E0;
+    --input-bg: #2C1A5C;
+    --border-color: #5C4A9D;
+    --green-accent: #2ECC71; /* Cor verde para o lado direito e acentos */
+    --light-grey-text: rgba(255, 255, 255, 0.5); /* Cor para placeholder e ícones sutis */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, var(--purple-gradient-start), var(--purple-gradient-end));
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    max-height: 700px;
+    background-color: var(--dark-blue);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(100, 26, 204), #3214a0);
+    z-index: 1;
+}
+
+.robot-section {
+    flex: 0 0 250px;
+    background: linear-gradient(to bottom, var(--purple-gradient-start), var(--dark-blue));
+    display: flex;
+    flex-direction: column; /* Para alinhar título e subtítulo abaixo da imagem */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.robot-section img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8;
+}
+
+.robo{
+    filter: invert(1);
+}
+
+.chat-header-icon-img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: auto;
+    opacity: 0.3;
+    z-index: 10;
+}
+
+/* Título e subtítulo na seção do robô */
+.robot-section h2 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.robot-section p {
+    color: var(--light-grey-text);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.chat-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    background-color: var(--dark-blue);
+    padding-bottom: 90px; /* Espaço para o formulário */
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Transição de entrada para mensagens */
+.message {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px; /* Espaçamento entre avatar e balão */
+    max-width: 75%;
+    margin-bottom: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.4s ease-out forwards;
+}
+
+/* Atraso para efeito cascata das mensagens */
+.chat-messages .message:nth-child(1) { animation-delay: 0.0s; }
+.chat-messages .message:nth-child(2) { animation-delay: 0.1s; }
+.chat-messages .message:nth-child(3) { animation-delay: 0.2s; }
+.chat-messages .message:nth-child(4) { animation-delay: 0.3s; }
+.chat-messages .message:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.user {
+    margin-left: auto;
+    flex-direction: row-reverse; /* Avatar à direita, balão à esquerda */
+}
+
+.message.ia {
+    margin-right: auto;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.message.user .avatar {
+    border-color: rgb(92, 42, 163);
+}
+
+/* Balão da mensagem (sem o bico/triângulo) */
+.bubble {
+    padding: 12px 18px;
+    border-radius: 20px; /* Cantos totalmente arredondados para um visual uniforme sem bico */
+    color: var(--text-color);
+    position: relative; /* Mantém a posição relativa para qualquer uso futuro ou alinhamento */
+    word-wrap: break-word;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    animation: bubblePop 0.3s ease-out forwards;
+    transform-origin: bottom;
+}
+
+/* Removendo as regras para os pseudo-elementos ::before (que criavam os triângulos) */
+/* .bubble::before { content: ''; position: absolute; width: 0; height: 0; border-style: solid; } */
+/* .message.user .bubble::before { ... } */
+/* .message.ia .bubble::before { ... } */
+
+/* Keyframes para a animação bubblePop */
+@keyframes bubblePop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.message.user .bubble {
+    background-color: var(--message-bubble-bg-user);
+    /* Removemos border-top-right-radius para usar o border-radius geral de 20px */
+}
+
+.message.ia .bubble {
+    background-color: var(--message-bubble-bg-ia);
+    /* Removemos border-top-left-radius para usar o border-radius geral de 20px */
+}
+
+.chat-form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px;
+    background-color: var(--dark-blue);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.chat-form input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.chat-form input[type="text"]::placeholder {
+    color: var(--light-grey-text);
+    text-align: left;
+    content: "Converse com Wayzi";
+}
+
+.chat-form input[type="text"]::placeholder::after {
+    display: none;
+}
+
+.chat-form input[type="text"]:focus {
+    border-color: #3A1F7B;
+    box-shadow: 0 0 8px rgba(126, 45, 167, 0.4);
+}
+
+.chat-notification-icon {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--light-grey-text);
+    pointer-events: none;
+}
+
+.chat-form button[type="submit"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    flex-shrink: 0;
+    background:
+        url('/static/assets/seta.png') no-repeat center / 50% 50%, /* Imagem: URL, repeat, position, size */
+        linear-gradient(45deg, rgb(163, 57, 163), #171caf); /* Gradiente */
+  
+}
+
+.chat-form button[type="submit"]::before {
+    display: none;
+}
+
+.chat-form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    background:
+        url('/static/assets/seta.png') no-repeat center / 60% 60%, /* Mantenha a imagem com suas propriedades */
+        linear-gradient(45deg, #6234e0, rgb(142, 37, 142)); /* NOVO Gradiente de hover */
+}
+
+.chat-form button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+    background:
+        url('/static/assets/seta.png') no-repeat center / 50% 50%, /* Mantenha a imagem com suas propriedades */
+        linear-gradient(45deg, #2e27ae, rgb(142, 37, 142)); /* NOVO Gradiente de active */
+}
+
+.footer-bottom {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: var(--dark-blue);
+    z-index: 100;
+}
+
+.footer-bottom p {
+    font-size: 0.95em;
+    color: #888;
+    text-align: center;
+    margin: 8px 0;
+    width: 100%;
+}

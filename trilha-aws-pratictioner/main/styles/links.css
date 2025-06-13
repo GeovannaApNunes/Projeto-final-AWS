@@ -1,0 +1,253 @@
+/* Reset simples */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;  /* porque rotacionamos */
+  height: 100vw;
+  z-index: -1;
+  background-image: 
+    linear-gradient(to bottom right, rgba(0, 0, 255, 0.5), rgba(128, 0, 128, 0.5)),
+    url(/main/src/assents/fundo\ tec.jpeg.jpg);
+  background-size: cover;
+  background-position: center;
+  transform: rotate(-90deg) translateX(-100%) scale(1.05);
+  transform-origin: top left;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo img {
+  height: 50px; /* aumenta um pouco para equilibrar */
+  margin-bottom: 30px;
+}
+
+.img-inicial {
+  display: flex;
+  justify-content: center;
+  margin-left: 200px; /* ao invés de transform, cria espaço real */
+}
+
+.img-inicial img {
+  height: 65px; /* WAYS um pouco maior */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #e0e0e0;
+}
+
+.sign-in {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.sign-in:hover {
+  background-color: #867f7f;
+}
+
+/* Linha divisória */
+hr {
+  all: unset;  /* Reseta tudo */
+  display: block;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.hero {
+  padding: 0px 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: #ffffff;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button {
+  display: block; /* Faz o botão ocupar uma linha e permite o margin auto */
+  margin: 20px auto 0 auto; /* Centraliza horizontalmente */
+  background-color: #0a3d62;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: fit-content;
+  min-width: 150px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #064273;
+  transform: translateY(-2px);
+}
+
+
+/* Barra de pesquisa */
+#searchContainer {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#searchInput {
+  flex-grow: 1;
+  max-width: 426px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #cbd5e1;
+  transition: border-color 0.25s ease;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #0a3d62;
+  box-shadow: 0 0 6px rgba(10, 61, 98, 0.3);
+}
+
+#filterType {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid #cbd5e1;
+  font-size: 1rem;
+  max-width: 160px;
+  transition: border-color 0.25s ease;
+}
+
+#filterType:focus {
+  outline: none;
+  border-color: #0a3d62;
+  box-shadow: 0 0 6px rgba(10, 61, 98, 0.3);
+}
+
+/* Lista de conteúdos - grid */
+#contentList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.content-item {
+  background:linear-gradient(to bottom right,rgba(61, 129, 211, 0.5), rgb(34, 29, 34));
+  border-radius: 12px;
+  padding: 15px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content-item h3 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.content-item p {
+  color: #ccc;
+  margin: 0;
+}
+
+.footer-bottom {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: var(--dark-blue);
+    z-index: 100;
+}
+
+.footer-bottom p {
+    font-size: 0.95em;
+    color: #888;
+    text-align: center;
+    margin: 8px 0;
+    width: 100%;
+}

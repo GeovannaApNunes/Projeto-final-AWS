@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat com Wayzi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="robot-section">
+            <img src="{{ url_for('static', filename='assets/msg.png') }}" alt="Ícone de Mensagem" class="chat-header-icon-img">
+            <img class="robo" src="{{ url_for('static', filename='assets/robo.png') }}" alt="Wayzi">
+        </div>
+
+        <div class="chat-content">
+            <div id="messages" class="chat-messages"></div>
+
+            <form id="chat-form" class="chat-form">
+                <input type="text" id="user-input" placeholder="Converse com Wayzi " required>
+                <button type="submit"></button>
+            </form>
+        </div>
+    </div>
+
+        <footer>
+        <div class="footer-bottom">
+        <p>
+            <i class="fas fa-info-circle"></i>
+            As respostas da IA são geradas automaticamente e podem conter imprecisões. Em caso de dúvida, consulte fontes confiáveis.
+        </p>
+        </div>
+      </footer>
+
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede recarregar a página
+
+            const input = document.getElementById('user-input');
+            const pergunta = input.value.trim();
+
+            if (!pergunta) return; // Se o input estiver vazio, não faz nada
+
+            addMessage('user', pergunta);
+
+            // Limpa o input
+            input.value = '';
+
+            // Envia a pergunta para o backend
+            fetch('/perguntar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ pergunta: pergunta })
+            })
+            .then(response => response.json())
+            .then(data => {
+                addMessage('ia', data.resposta);
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                addMessage('ia', 'Desculpe, ocorreu um erro ao obter a resposta.');
+            });
+        });
+
+        // Função para escapar caracteres HTML e evitar XSS
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Função que cria dinamicamente uma mensagem com avatar
+        function addMessage(sender, text) {
+            const message = document.createElement('div');
+            message.className = `message ${sender}`;
+
+            const avatar = document.createElement('img');
+            avatar.className = 'avatar';
+            avatar.alt = sender;
+
+            if (sender === 'user') {
+                avatar.src = '{{ url_for("static", filename="assets/user.png") }}';
+            } else {
+                avatar.src = '{{ url_for("static", filename="assets/chat.jpeg") }}';
+            }
+
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.textContent = escapeHtml(text);
+
+            message.appendChild(avatar);
+            message.appendChild(bubble);
+
+            const messages = document.getElementById('messages');
+            messages.appendChild(message);
+
+            messages.scrollTop = messages.scrollHeight;
+        }
+    </script>
+
+</body>
+</html>

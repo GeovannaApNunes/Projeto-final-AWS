@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist de Estudos AWS Cloud Practitioner</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+   <link rel="shortcut icon" href="/main/src/assents/ways.png" type="image/x-icon">
+</head>
+<body>
+
+  <div class="background"></div>
+
+   <header>
+  <div class="logo">
+    <img src="src/assents/logo.png" alt="Logo">
+  </div>
+
+  <div class="img-inicial">
+    <img src="src/assents/ways.png" alt="WAYS">
+  </div>
+
+  <nav>
+    <a href="pag-inicial.html">Inicio</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="cards.html">Cards</a>
+    <a href="Apresentação_grupo_01/index.html">Sobre</a>
+    <a href="login.html" class="sign-in">Sign in</a>
+  </nav>
+</header>
+
+<hr>
+
+  <div class="container">
+    <h1>Checklist de Estudos AWS Cloud Practitioner</h1>
+    <p class="p01">Gerencie suas metas, progresso e temas de estudo.</p>  
+    <!-- Metas de Estudo -->
+    
+    <!-- Metas de Estudo -->
+<div class="card">
+  <h2>Metas de Estudo</h2>
+  <input type="text" id="metaInput" placeholder="Digite sua meta de estudo">
+  <button onclick="adicionarMeta()">Adicionar Meta</button>
+  <ul id="metaList"></ul>
+</div>
+
+
+    <!-- Barra de Progresso -->
+    <div class="card">
+      <h2>Progresso</h2>
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <p id="progressoText">0% Concluído</p>
+    </div>
+
+        <footer>
+        <div class="footer-bottom">
+         <p> WAYS  &copy;2025 - Todos os direitos reservados.</p>
+        </div>
+      </footer>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

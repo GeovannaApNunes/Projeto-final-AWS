@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/cards.css">
+     <link rel="shortcut icon" href="/main/src/assents/ways.png" type="image/x-icon">
+    <title>Cards</title>
+</head>
+<body>
+
+   <div class="background"></div>
+
+   <header>
+  <div class="logo">
+    <img src="src/assents/logo.png" alt="Logo">
+  </div>
+
+  <div class="img-inicial">
+    <img src="src/assents/ways.png" alt="WAYS">
+  </div>
+
+  <nav>
+    <a href="pag-inicial.html">Inicio</a>
+    <a href="checklist.html">Checklist</a>
+    <a href="cards.html">Cards</a>
+    <a href="Apresentação_grupo_01/index.html">Sobre</a>
+    <a href="login.html" class="sign-in">Sign in</a>
+  </nav>
+</header>
+
+<hr>
+    
+   <div class="Cards">
+      <h1>Cards</h1>
+    </div>
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Pesquise um serviço AWS" onkeyup="filterCards()">
+    </div>
+
+    
+ 
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front"> 
+                <h2>AWS Support Plans</h2>
+                <p>Diferentes planos de suporte da AWS</p>
+            </div>
+            <div class="card-back">
+                <h2>O que são?</h2>
+                <p>A AWS oferece diferentes planos de suporte para atender às necessidades de seus clientes.</p>
+                <p>Incluem suporte técnico 24/7, orientação arquitetural, e recomendações personalizadas.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Health Dashboard</h2>
+                <p>Monitoramento de incidentes na AWS</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Fornece uma visão abrangente do estado de saúde de serviços AWS e eventos em tempo real.</p>
+                <p>Permite visualizar problemas, alertas e status de manutenção de sua conta AWS.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Partner Network (APN)</h2>
+                <p>Conexão com parceiros especializados</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>A APN conecta empresas a uma rede global de parceiros especializados em soluções AWS.</p>
+                <p>Fornece suporte adicional, como consultoria, integração e soluções personalizadas.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Benefícios de ser um AWS Partner</h2>
+                <p>Vantagens para os parceiros AWS</p>
+            </div>
+            <div class="card-back">
+                <h2>Benefícios</h2>
+                <p>Acesso a treinamentos exclusivos, eventos de networking e incentivos financeiros.</p>
+               
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Marketplace</h2>
+                <p>Serviços oferecidos</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>O AWS Marketplace é uma loja digital que oferece software, ferramentas de segurança e soluções de governança.</p>
+                <p>Facilita a aquisição de soluções prontas para uso e integração com serviços AWS.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Professional Services</h2>
+                <p>Consultoria especializada</p>
+            </div>
+            <div class="card-back">
+                <h2>O que são?</h2>
+                <p>Consultoria especializada para migração e arquitetura na AWS, ajudando as empresas a implementar e otimizar soluções.</p>
+                <p>A AWS Professional Services oferece uma equipe de especialistas para apoiar todas as fases do projeto.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Solutions Architects</h2>
+                <p>Especialistas AWS</p>
+            </div>
+            <div class="card-back">
+                <h2>O que são?</h2>
+                <p>São profissionais especializados que ajudam a escolher e implementar os serviços AWS mais adequados ao seu negócio.</p>
+                <p>Oferecem orientação para implementar soluções escaláveis, seguras e eficientes na nuvem.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Health API</h2>
+                <p>Insights em tempo real</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>A AWS Health API fornece informações em tempo real sobre incidentes e manutenções que impactam os serviços AWS.</p>
+                <p>Permite a integração de dados de eventos com sistemas de monitoramento e resposta automatizada.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Trust & Safety Team</h2>
+                <p>Segurança e confiança</p>
+            </div>
+            <div class="card-back">
+                <h2>O que fazem?</h2>
+                <p>A AWS Trust & Safety Team é responsável por lidar com denúncias de abuso, como phishing, malware e uso indevido dos serviços AWS.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Blogs</h2>
+                <p>Conteúdo atualizado sobre AWS</p>
+            </div>
+            <div class="card-back">
+                <h2>O que são?</h2>
+                <p>Os AWS Blogs oferecem insights e novidades sobre serviços e práticas recomendadas na AWS.</p>
+                <p>É uma ótima fonte para se manter atualizado com as inovações da AWS.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS re:Post</h2>
+                <p>Comunidade técnica</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>A AWS re:Post é uma comunidade técnica onde é possível fazer perguntas e obter respostas relacionadas à AWS.</p>
+                <p>Ideal para esclarecer dúvidas de forma colaborativa.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Knowledge Center</h2>
+                <p>Base de conhecimento</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>O AWS Knowledge Center oferece uma base de dados com respostas a perguntas frequentes e soluções para problemas comuns.</p>
+                <p>É uma ferramenta útil para encontrar respostas rápidas e melhorar a experiência na AWS.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Well-Architected Tool</h2>
+                <p>Recomendações de arquitetura</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>A AWS Well-Architected Tool fornece recomendações para otimizar segurança, custo e desempenho na arquitetura de sistemas na AWS.</p>
+                <p>Ajuda a garantir que as arquiteturas sejam eficientes e seguras.</p>
+            </div>
+        </div>
+    </div>
+
+       
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+          <div class="card-front">
+              <h2>AWS Support Center</h2>
+              <p>Portal de suporte da AWS</p>
+          </div>
+          <div class="card-back">
+              <h2>O que é?</h2>
+              <p>Portal centralizado para gerenciar tickets de suporte e acessar recursos como o AWS Trusted Advisor e o AWS Health Dashboard.</p>
+          </div>
+      </div>
+  </div>
+
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Support</h2>
+                <p>Suporte técnico da AWS</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>A AWS oferece diferentes níveis de suporte, desde o básico gratuito até o Enterprise Support, com um Technical Account Manager (TAM) e monitoramento avançado.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Basic Support</h2>
+                <p>Plano de suporte gratuito</p>
+            </div>
+            <div class="card-back">
+                <h2>O que inclui?</h2>
+                <p>Acesso a FAQs, documentação e AWS re:Post. Ideal para quem está começando a usar AWS.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Developer Support</h2>
+                <p>Suporte para desenvolvedores</p>
+            </div>
+            <div class="card-back">
+                <h2>O que inclui?</h2>
+                <p>Acesso ao AWS Support via e-mail, melhores práticas e recomendações personalizadas para desenvolvedores.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Business Support</h2>
+                <p>Suporte 24/7</p>
+            </div>
+            <div class="card-back">
+                <h2>O que inclui?</h2>
+                <p>Atendimento 24/7, acesso ao AWS Trusted Advisor e outras ferramentas avançadas para empresas.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Enterprise Support</h2>
+                <p>Suporte prioritário</p>
+            </div>
+            <div class="card-back">
+                <h2>O que inclui?</h2>
+                <p>Atendimento prioritário, acesso a um Technical Account Manager (TAM) e monitoramento avançado.</p>
+            </div>
+        </div>
+    </div>
+
+       
+    <div class="card" onclick="flipCard(this)">
+      <div class="card-inner">
+          <div class="card-front">
+              <h2>Enterprise On-Ramp Support</h2>
+              <p>Suporte especializado para cargas críticas</p>
+          </div>
+          <div class="card-back">
+              <h2>O que inclui?</h2>
+              <p>Suporte técnico especializado para cargas de trabalho críticas, ideal para empresas em fase de crescimento.</p>
+          </div>
+      </div>
+  </div>
+    
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Independent Software Vendors (ISVs)</h2>
+                <p>Parceiros da AWS</p>
+            </div>
+            <div class="card-back">
+                <h2>O que são?</h2>
+                <p>Empresas que oferecem software na AWS Marketplace, criando soluções para diferentes necessidades.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>System Integrators (SIs)</h2>
+                <p>Parceiros especializados</p>
+            </div>
+            <div class="card-back">
+                <h2>O que são?</h2>
+                <p>Empresas que ajudam a projetar, migrar e gerenciar infraestrutura AWS, oferecendo consultoria especializada.</p>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Budgets</h2>
+                <p>Gerenciamento de orçamentos na AWS</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Permite definir limites de gastos e criar alertas quando os custos atingem certos valores. Ideal para controlar orçamentos.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Documentation</h2>
+                <p>Documentação oficial</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Documentação detalhada dos serviços AWS, com guias, tutoriais e referências para utilizar a plataforma AWS de forma eficaz.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Whitepapers</h2>
+                <p>Guias aprofundados</p>
+            </div>
+            <div class="card-back">
+                <h2>O que são?</h2>
+                <p>Guias detalhados sobre melhores práticas, arquiteturas e casos de uso de AWS, fornecendo uma visão aprofundada sobre a plataforma.</p>
+            </div>
+        </div>
+    </div>
+    
+  
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Training and Certification</h2>
+                <p>Educação na AWS</p>
+            </div>
+            <div class="card-back">
+                <h2>O que oferece?</h2>
+                <p>Cursos e certificações que ajudam a aprofundar os conhecimentos sobre AWS e qualificações técnicas.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Cost Explorer</h2>
+                <p>Análise de Custos</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Ajuda a analisar custos, identificar padrões de consumo e realizar previsões. Excelente para otimizar gastos e ajustar orçamentos.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Billing Conductor</h2>
+                <p>Faturamento Personalizado</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Permite personalizar faturas e distribuir custos detalhados em organizações grandes, facilitando o controle financeiro. <a href="#">Link</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS CUR - Relatórios de Uso e Custo</h2>
+                <p>Relatórios Detalhados de Consumo</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Fornece dados detalhados sobre consumo e faturamento, permitindo o controle financeiro e a otimização de custos. Ideal para análise profunda. <a href="#">Link</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Identificação e Comparação de Opções de Compra de Computação</h2>
+                <p>Escolha Económica</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Avaliar a carga de trabalho para escolher a opção de compra mais econômica, considerando fatores como duração, previsibilidade e tolerância a interrupções.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Flexibilidade das Instâncias Reservadas</h2>
+                <p>Modificação e Troca de Instâncias</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Entender as opções de modificação e troca de instâncias reservadas, permitindo ajustes conforme as necessidades mudam ao longo do tempo.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Custos de Transferência de Dados</h2>
+                <p>Otimização de Custos de Dados</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Analisar padrões de tráfego de dados para identificar oportunidades de otimização e redução de custos relacionados à transferência de dados.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Opções de Preços de Armazenamento</h2>
+                <p>Seleção de Armazenamento</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Selecionar a classe de armazenamento adequada com base na frequência de acesso e requisitos de durabilidade dos dados, equilibrando custo e desempenho.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Pricing Calculator</h2>
+                <p>Estimativa de Custos</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Permite simular e calcular custos com base nos serviços específicos da AWS, ajudando no planejamento financeiro. <a href="#">Link</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Billing Dashboard</h2>
+                <p>Visualização de Faturas</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Permite visualizar faturas, histórico de pagamentos e o consumo de serviços, ajudando a entender melhor os custos. <a href="#">Mais informações</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>AWS Organizations</h2>
+                <p>Gestão de Contas</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Gerencia várias contas AWS dentro de uma organização. Recursos incluem a consolidação de faturamento e o gerenciamento centralizado de políticas de segurança e permissões. <a href="#">Mais informações</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Tags de Alocação de Custos da AWS</h2>
+                <p>Rastreamento de Custos</p>
+            </div>
+            <div class="card-back">
+                <h2>O que são?</h2>
+                <p>Tags ajudam a categorizar e alocar custos corretamente. Podem ser criadas automaticamente ou definidas pelo usuário para rastrear custos por projeto, equipe, ou outro critério. <a href="#">Mais informações</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Amazon S3</h2>
+                <p>Armazenamento de Objetos</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Armazenamento de objetos com múltiplas classes: 
+                    <ul>
+                        <li><strong>Standard</strong> – Acesso frequente</li>
+                        <li><strong>Intelligent-Tiering</strong> – Otimiza custos automaticamente</li>
+                        <li><strong>Standard-IA</strong> – Acesso infrequente</li>
+                        <li><strong>Glacier</strong> – Armazenamento de longo prazo e custo reduzido</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>Amazon EFS</h2>
+                <p>Sistema de Arquivos Escalável</p>
+            </div>
+            <div class="card-back">
+                <h2>O que é?</h2>
+                <p>Sistema de arquivos escalável para instâncias EC2, com classes de armazenamento:
+                    <ul>
+                        <li><strong>Standard</strong> – Para dados com acesso frequente</li>
+                        <li><strong>Infrequent Access</strong> – Para dados com acesso infrequente</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>Instâncias Sob Demanda</h2>
+            <p>Pagamento por uso, sem compromisso</p>
+          </div>
+          <div class="card-back">
+            <p>Pague por hora ou segundo, ideal para cargas imprevisíveis e ambientes de teste/desenvolvimento.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>Instâncias Reservadas</h2>
+            <p>Descontos por compromisso</p>
+          </div>
+          <div class="card-back">
+            <p>Compromisso de 1 ou 3 anos. Ideais para uso estável e previsível. Regionais ou zonais.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>Instâncias Spot</h2>
+            <p>Até 90% de desconto</p>
+          </div>
+          <div class="card-back">
+            <p>Usam capacidade ociosa da AWS. Ideais para workloads tolerantes a falhas como Big Data e tarefas em lote.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>Savings Plans</h2>
+            <p>Compromisso flexível</p>
+          </div>
+          <div class="card-back">
+            <p>Descontos com compromisso em USD/hora por 1 ou 3 anos. Flexível entre serviços e regiões.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>Hosts Dedicados</h2>
+            <p>Servidor físico exclusivo</p>
+          </div>
+          <div class="card-back">
+            <p>Atende requisitos de conformidade e licenciamento. Uso exclusivo do servidor físico.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>Instâncias Dedicadas</h2>
+            <p>Isolamento completo</p>
+          </div>
+          <div class="card-back">
+            <p>Executadas em hardware dedicado a um único cliente, garantindo isolamento físico.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>Reserva de Capacidade</h2>
+            <p>Capacidade garantida</p>
+          </div>
+          <div class="card-back">
+            <p>Garante capacidade em uma zona de disponibilidade específica para demandas futuras.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>Amazon AppStream 2.0</h2>
+            <p>Streaming de apps desktop</p>
+          </div>
+          <div class="card-back">
+            <p>Permite entregar aplicativos de desktop via navegador, sem instalação local. Acesso em qualquer dispositivo.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>Amazon WorkSpaces</h2>
+            <p>Desktops na nuvem</p>
+          </div>
+          <div class="card-back">
+            <p>Fornece desktops virtuais seguros, acessíveis de qualquer lugar, com gerenciamento pela AWS.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>Amazon WorkSpaces Web</h2>
+            <p>Acesso seguro via navegador</p>
+          </div>
+          <div class="card-back">
+            <p>Acesso a apps internos e web com segurança, sem VPN ou cliente adicional.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>AWS Amplify</h2>
+            <p>Frontend web e mobile</p>
+          </div>
+          <div class="card-back">
+            <p>Facilita a construção, implantação e hospedagem de apps full-stack com integração nativa à AWS.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>AWS AppSync</h2>
+            <p>APIs GraphQL em tempo real</p>
+          </div>
+          <div class="card-back">
+            <p>Cria APIs GraphQL com sincronização de dados em tempo real, suporte a offline e integração com DynamoDB e Lambda.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>AWS IoT Core</h2>
+            <p>Conecte dispositivos à nuvem</p>
+          </div>
+          <div class="card-back">
+            <p>Conexão segura de dispositivos IoT à AWS, coleta e análise de dados em tempo real.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-inner">
+          <div class="card-front">
+            <h2>AWS IoT Greengrass</h2>
+            <p>Processamento local</p>
+          </div>
+          <div class="card-back">
+            <p>Executa funções Lambda localmente, sincroniza dados e comunica entre dispositivos mesmo offline.</p>
+          </div>
+        </div>
+      </div>
+
+  <div class="card" onclick="flipCard(this)">
+  <div class="card-inner">
+    <div class="card-front">
+      <h2>Mensagens & Notificações</h2>
+    </div>
+    <div class="card-back">
+      <p>SNS para notificações em massa, SQS para enfileiramento, EventBridge para eventos baseados em regras.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card" onclick="flipCard(this)">
+  <div class="card-inner">
+    <div class="card-front">
+      <h2>Apps de Negócios</h2>
+    </div>
+    <div class="card-back">
+      <p>Amazon Connect para call centers, SES para envio de e-mails em larga escala.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card" onclick="flipCard(this)">
+  <div class="card-inner">
+    <div class="card-front">
+      <h2>Suporte ao Cliente</h2>
+    </div>
+    <div class="card-back">
+      <p>AWS Support (planos técnicos), AWS IQ (especialistas), AWS Activate (para startups).</p>
+    </div>
+  </div>
+</div>
+
+<div class="card" onclick="flipCard(this)">
+  <div class="card-inner">
+    <div class="card-front">
+      <h2>Desenvolvimento & CI/CD</h2>
+    </div>
+    <div class="card-back">
+      <p>CodePipeline (CI/CD), CodeBuild, CodeDeploy e X-Ray (monitoramento e debug).</p>
+    </div>
+  </div>
+</div>
+
+<div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon EventBridge</h2>
+        <p>Integração baseada em eventos</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Conecta aplicações por eventos.</p>
+        <p>Suporta dados de apps SaaS, AWS e próprios.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon SNS</h2>
+        <p>Serviço de notificação</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Envia mensagens via SMS, e-mail ou endpoints HTTP.</p>
+        <p>Ideal para notificações em massa.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon SQS</h2>
+        <p>Fila de mensagens</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Comunicação assíncrona entre sistemas distribuídos.</p>
+        <p>Alta confiabilidade e desacoplamento.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon Connect</h2>
+        <p>Call center na nuvem</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Roteamento inteligente de chamadas.</p>
+        <p>Permite gravação, análise e automação.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon SES</h2>
+        <p>Envio de e-mails em massa</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Envia e recebe e-mails com alta escalabilidade e economia.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS Activate</h2>
+        <p>Suporte para startups</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Oferece créditos e recursos técnicos para startups na AWS.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS IQ</h2>
+        <p>Especialistas AWS on-demand</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Plataforma para contratar experts AWS certificados para projetos.</p>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Amazon RDS -->
+<div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon RDS</h2>
+        <p>Banco de dados relacional gerenciado</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Gerencia bancos como MySQL, PostgreSQL, SQL Server e outros.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Amazon Aurora -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon Aurora</h2>
+        <p>Banco de dados relacional otimizado</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Compatível com MySQL e PostgreSQL, altamente disponível e rápido.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Amazon DynamoDB -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon DynamoDB</h2>
+        <p>Banco NoSQL escalável</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Alta performance para leitura e escrita em tempo real.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- AWS DMS -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS DMS</h2>
+        <p>Migração de dados para AWS</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Move dados de bancos locais para a nuvem de forma segura.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- AWS SCT -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS SCT</h2>
+        <p>Conversão de esquemas</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Converte o esquema do banco de origem para o formato da AWS.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Amazon VPC -->
+<div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon VPC</h2>
+        <p>Rede privada na nuvem</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Permite configurar sub-redes, roteadores, NATs e segurança.</p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- AWS VPN -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS VPN</h2>
+        <p>Rede segura entre AWS e data center</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Conecção criptografada entre a AWS e sua rede local.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- AWS Direct Connect -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS Direct Connect</h2>
+        <p>Conexão dedicada com a AWS</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Link físico de alta velocidade entre sua empresa e a AWS.</p>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <!-- Amazon EBS -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon EBS</h2>
+        <p>Armazenamento em bloco</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Usado com instâncias EC2, com alta performance.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Amazon EFS / FSx -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>EFS / FSx</h2>
+        <p>Armazenamento em arquivo</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>EFS para Linux e FSx para Windows. Compartilhamento de arquivos em rede.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- AWS Storage Gateway -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Storage Gateway</h2>
+        <p>Integração local com a nuvem</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Permite uso híbrido entre on-premises e AWS.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Amazon SageMaker -->
+<div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon SageMaker</h2>
+        <p>Plataforma de ML completa</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Crie, treine e implemente modelos de machine learning.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Amazon Lex -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon Lex</h2>
+        <p>Criação de chatbots com IA</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Permite criar interfaces de voz e texto como Alexa.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Amazon Kendra -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon Kendra</h2>
+        <p>Busca empresarial com IA</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Pesquisa inteligente em documentos corporativos.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Amazon Athena -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon Athena</h2>
+        <p>Consultas SQL em S3</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Executa SQL diretamente nos dados armazenados em S3.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Amazon Kinesis -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon Kinesis</h2>
+        <p>Streams de dados em tempo real</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Processa e analisa dados em tempo real como logs ou cliques.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- AWS Glue -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS Glue</h2>
+        <p>ETL para integração de dados</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Extrai, transforma e carrega dados de diversas fontes.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Amazon QuickSight -->
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon QuickSight</h2>
+        <p>Visualização de dados</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Crie dashboards interativos a partir dos seus dados.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Modelos de Implantação</h2>
+        <p>Nuvem Pública, Privada e Híbrida</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Nuvem Pública: Gerenciada pela AWS.</p>
+        <p>Privada: Recursos dedicados com AWS Outposts.</p>
+        <p>Híbrida: Integra local + AWS (ex: Direct Connect).</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Infraestrutura como Código</h2>
+        <p>Automação de recursos AWS</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Uso do AWS CloudFormation para provisionamento automático.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Regiões e AZs</h2>
+        <p>Alta disponibilidade e redundância</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Regiões = conjunto de AZs.</p>
+        <p>AZs = data centers isolados fisicamente.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Locais de Borda</h2>
+        <p>Melhor desempenho para usuários finais</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Servem para cache de conteúdo (ex: CloudFront, Global Accelerator).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon EC2</h2>
+        <p>Instâncias de máquina virtual</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Permite rodar servidores na nuvem com diferentes tipos de instância (CPU, memória, armazenamento).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+        <div class="card-front"> 
+            <h2>Amazon CloudFront</h2>
+            <p>Serviço de entrega de conteúdo (CDN)</p>
+        </div>
+        <div class="card-back">
+            <h2>O que é?</h2>
+            <p>O Amazon CloudFront é uma rede de entrega de conteúdo (CDN) da AWS.</p>
+            <p>Distribui dados, vídeos, aplicativos e APIs com baixa latência e alta velocidade por meio de locais de borda ao redor do mundo.</p>
+        </div>
+    </div>
+</div>
+
+<div class="card" onclick="flipCard(this)">
+  <div class="card-inner">
+      <div class="card-front"> 
+          <h2>Amazon Route 53</h2>
+          <p>Serviço de DNS escalável e altamente disponível</p>
+      </div>
+      <div class="card-back">
+          <h2>O que é?</h2>
+          <p>O Route 53 é o serviço de DNS da AWS que traduz nomes de domínio (como geovannanunes.dev) em endereços IP.</p>
+      </div>
+  </div>
+</div>
+
+<div class="card" onclick="flipCard(this)">
+  <div class="card-inner">
+      <div class="card-front"> 
+          <h2>AWS CodeCommit</h2>
+          <p>Repositório privado de código na nuvem</p>
+      </div>
+      <div class="card-back">
+          <h2>O que é?</h2>
+          <p>O CodeCommit é um serviço de controle de versão gerenciado que hospeda repositórios Git seguros na nuvem AWS.</p>
+          <p>Ideal para equipes colaborarem com código-fonte, com integração fácil a pipelines de CI/CD.</p>
+      </div>
+  </div>
+</div>
+
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS Lambda</h2>
+        <p>Execução sem servidor</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Executa código sob demanda sem gerenciar servidores. Paga-se pelo tempo de execução.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Amazon ECS e EKS</h2>
+        <p>Orquestração de contêineres</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>ECS: Orquestração de contêineres Docker.</p>
+        <p>EKS: Execução de Kubernetes gerenciado.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS IAM</h2>
+        <p>Controle de identidade e acesso</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Gerencia usuários, permissões e acessos a recursos na AWS.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Usuário-Raiz</h2>
+        <p>Segurança crítica</p>
+      </div>
+      <div class="card-back">
+        <h2>Como proteger?</h2>
+        <p>Habilitar MFA e evitar seu uso direto. Use IAM para tarefas diárias.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Menor Privilégio</h2>
+        <p>Segurança por permissão mínima</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Conceder apenas as permissões necessárias para realizar tarefas específicas.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS IAM Identity Center</h2>
+        <p>Acesso centralizado</p>
+      </div>
+      <div class="card-back">
+        <h2>O que faz?</h2>
+        <p>Gerencia acesso entre várias contas e aplicações com login único (SSO).</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Armazenamento de Credenciais</h2>
+        <p>Segurança para senhas e chaves</p>
+      </div>
+      <div class="card-back">
+        <h2>Serviços:</h2>
+        <p><strong>Secrets Manager</strong>: Armazena credenciais com rotação automática.</p>
+        <p><strong>Parameter Store</strong>: Armazena parâmetros e senhas com controle de acesso.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Autenticação MFA</h2>
+        <p>Mais segurança no login</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Exige dois fatores (senha + dispositivo) para autenticação.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Perfis IAM Entre Contas</h2>
+        <p>Compartilhamento seguro</p>
+      </div>
+      <div class="card-back">
+        <h2>Para que serve?</h2>
+        <p>Permite usuários acessarem recursos entre contas diferentes com confiança.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Grupos de Segurança</h2>
+        <p>Firewall para EC2</p>
+      </div>
+      <div class="card-back">
+        <h2>O que faz?</h2>
+        <p>Controla tráfego de entrada/saída com base em regras definidas.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>ACLs de Rede</h2>
+        <p>Camada extra de controle</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Controle de tráfego em nível de sub-rede. Stateless, ao contrário dos SGs.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS WAF</h2>
+        <p>Proteção para aplicações web</p>
+      </div>
+      <div class="card-back">
+        <h2>O que faz?</h2>
+        <p>Bloqueia tráfego malicioso como injeções SQL e XSS.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Produtos de Terceiros</h2>
+        <p>Segurança via Marketplace</p>
+      </div>
+      <div class="card-back">
+        <h2>Exemplos:</h2>
+        <p>Antivírus, firewalls, monitoramento avançado.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Fontes de Segurança</h2>
+        <p>Informações oficiais AWS</p>
+      </div>
+      <div class="card-back">
+        <h2>Onde consultar?</h2>
+        <p>Knowledge Center, Security Center e Blog de Segurança da AWS.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS Trusted Advisor</h2>
+        <p>Boas práticas e alertas</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Analisa sua conta e recomenda melhorias de segurança e desempenho.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Conceitos de Segurança, Governança e Conformidade</h2>
+        <p>Criptografia, proteção de dados e governança na AWS</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>A AWS segue normas globais de conformidade com várias ferramentas para segurança e criptografia de dados.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Criptografia em Trânsito e Repouso</h2>
+        <p>Proteção de dados na AWS</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>Criptografia TLS para dados em trânsito e KMS para dados em repouso, garantindo segurança total.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Ferramentas de Segurança da AWS</h2>
+        <p>Proteção contra ameaças e vulnerabilidades</p>
+      </div>
+      <div class="card-back">
+        <h2>O que é?</h2>
+        <p>AWS Shield, WAF, GuardDuty e mais para proteção contra DDoS e ameaças em tempo real.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Proposta de Valor da Nuvem AWS</h2>
+        <p>Escalabilidade, segurança, confiabilidade e economia para empresas de todos os tamanhos.</p>
+      </div>
+      <div class="card-back">
+        <h2>Benefícios</h2>
+        <ul>
+          <li><strong>Economia de Custos:</strong> Modelo "pague pelo que usar".</li>
+          <li><strong>Velocidade de Implantação:</strong> Provisionamento rápido de recursos.</li>
+          <li><strong>Alcance Global:</strong> Data centers em diversas regiões.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>AWS Well-Architected Framework</h2>
+        <p>Diretrizes para construir sistemas seguros e eficientes na AWS.</p>
+      </div>
+      <div class="card-back">
+        <h2>Pilares</h2>
+        <ul>
+          <li><strong>Excelência Operacional:</strong> Melhorar continuamente os processos.</li>
+          <li><strong>Segurança:</strong> Proteger dados e sistemas com criptografia e controles de acesso.</li>
+          <li><strong>Confiabilidade:</strong> Garantir recuperação de falhas e alta disponibilidade.</li>
+          <li><strong>Eficiência de Desempenho:</strong> Uso eficiente de recursos.</li>
+          <li><strong>Otimizacão de Custos:</strong> Redução de custos e escolha de instâncias apropriadas.</li>
+          <li><strong>Sustentabilidade:</strong> Impacto ambiental reduzido.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Estratégias de Adoção da Nuvem</h2>
+        <p>Frameworks e ferramentas para facilitar a migração para a AWS.</p>
+      </div>
+      <div class="card-back">
+        <h2>Benefícios do AWS Cloud Adoption Framework</h2>
+        <ul>
+          <li><strong>Redução do Risco Comercial:</strong> Adapte-se rapidamente a mudanças.</li>
+          <li><strong>Melhoria de ESG:</strong> Práticas mais sustentáveis.</li>
+          <li><strong>Aumento da Receita:</strong> Lançamento rápido de novos produtos.</li>
+          <li><strong>Aumento da Eficiência:</strong> Otimização de processos e operações.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front">
+        <h2>Aspectos Econômicos da Nuvem</h2>
+        <p>A nuvem altera o modelo financeiro das empresas com custos variáveis.</p>
+      </div>
+      <div class="card-back">
+        <h2>Custos e Estratégias</h2>
+        <ul>
+          <li><strong>Custos Fixos vs. Variáveis:</strong> Pague apenas pelo que usa.</li>
+          <li><strong>Licenciamento:</strong> BYOL ou licenças inclusas.</li>
+          <li><strong>Automação:</strong> Uso do AWS CloudFormation para otimizar recursos.</li>
+          <li><strong>Serviços Gerenciados:</strong> Amazon RDS, ECS, EKS e DynamoDB.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <footer>
+        <div class="footer-bottom">
+         <p> WAYS  &copy;2025 - Todos os direitos reservados.</p>
+        </div>
+      </footer>
+    
+        <script src="js/cards.js"></script> 
+</body>
+</html>

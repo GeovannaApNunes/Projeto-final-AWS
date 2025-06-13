@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fórum Estilo re:Post</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+   <link rel="shortcut icon" href="/main/src/assents/ways.png" type="image/x-icon">
+</head>
+<body>
+
+   <div class="background"></div>
+
+   <header class="navbar">
+  <div class="logo">
+    <img src="/main/src/assents/logo.png" alt="Logo">
+  </div>
+
+  <div class="img-inicial">
+    <img src="/main/src/assents/ways.png" alt="WAYS">
+  </div>
+
+  <nav>
+    <a href="/main/pag-inicial.html">Inicio</a>
+    <a href="/main/checklist.html">Checklist</a>
+    <a href="/main/cards.html">Cards</a>
+    <a href="/main/Apresentação_grupo_01/index.html">Sobre</a>
+    <a href="/main/login.html" class="sign-in">Sign in</a>
+  </nav>
+</header>
+
+  <header class="forum-header">
+    <h1>Fórum WAYS</h1>
+  </header>
+ 
+  <div class="forum-container">
+
+    <aside class="categories">
+  <h3>Categorias</h3>
+  <ul>
+    <li data-category="AWS">AWS</li>
+    <li data-category="Front-end">Front-end</li>
+    <li data-category="Back-end">Back-end</li>
+    <li data-category="Outros">Outros</li>
+    <li data-category="Todos">Mostrar Todos</li>
+  </ul>
+</aside>
+
+
+  <section class="post-form">
+    <h3>Postar uma dúvida</h3>
+    <input type="text" id="titulo" placeholder="Título da dúvida">
+    <select id="categoria">
+      <option value="AWS">AWS</option>
+      <option value="Front-end">Front-end</option>
+      <option value="Back-end">Back-end</option>
+      <option value="Outros">Outros</option>
+    </select>
+    <textarea id="descricao" placeholder="Descreva sua dúvida..."></textarea>
+    <button id="postar">Postar</button>
+  </section>
+
+  <section class="postagens">
+    <div class="retangulo" id="ret1"></div>
+    <div class="retangulo" id="ret2"></div>
+    <div class="retangulo" id="ret3"></div>
+  </section>
+
+</div>
+
+
+ <footer>
+    <div class="footer-bottom">
+      <p> WAYS  &copy;2025 - Todos os direitos reservados.</p>
+    </div>
+ </footer>
+
+<script>
+  const categoryItems = document.querySelectorAll('.categories li');
+
+  categoryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const selectedCategory = item.getAttribute('data-category');
+      filterPosts(selectedCategory);
+    });
+  });
+
+  function filterPosts(category) {
+    const posts = document.querySelectorAll('.post');
+
+    posts.forEach(post => {
+      const classes = Array.from(post.classList).filter(cls => cls !== 'post');
+      const postCategory = classes[0] || '';
+
+      if (category === 'Todos' || postCategory === category.replace(/[^a-zA-Z0-9]/g, '')) {
+        post.style.display = 'block';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  }
+
+  let currentBox = 0;
+  const boxes = [
+    document.getElementById('ret1'),
+    document.getElementById('ret2'),
+    document.getElementById('ret3')
+  ];
+
+  window.onload = function() {
+    const saved = JSON.parse(localStorage.getItem('postagens')) || [];
+    saved.forEach((post, i) => {
+      addPostToBox(post.titulo, post.categoria, post.descricao, i % 3, post.respostas);
+    });
+    currentBox = saved.length % 3;
+  }
+
+  document.getElementById('postar').addEventListener('click', () => {
+    const titulo = document.getElementById('titulo').value;
+    const categoria = document.getElementById('categoria').value;
+    const descricao = document.getElementById('descricao').value;
+
+    if (!titulo || !descricao) {
+      alert("Preencha todos os campos!");
+      return;
+    }
+
+    addPostToBox(titulo, categoria, descricao, currentBox, []);
+    savePost(titulo, categoria, descricao);
+
+    currentBox = (currentBox + 1) % 3;
+
+    document.getElementById('titulo').value = '';
+    document.getElementById('descricao').value = '';
+  });
+
+  function addPostToBox(titulo, categoria, descricao, boxIndex, respostas = []) {
+    const post = document.createElement('div');
+    post.classList.add('post');
+
+    const categoriaClasse = categoria.replace(/[^a-zA-Z0-9]/g, '');
+    post.classList.add(categoriaClasse);
+
+    post.innerHTML = `
+      <strong>${titulo}</strong><br>
+      ${descricao}<br>
+      <em>Categoria: ${categoria}</em>
+      <div class="respostas"></div>
+      <input type="text" class="responderInput" placeholder="Escreva uma resposta...">
+      <button class="responderBtn">Responder</button>
+    `;
+
+    const respostasDiv = post.querySelector('.respostas');
+
+    respostas.forEach(respTexto => {
+      const resposta = document.createElement('div');
+      resposta.classList.add('resposta');
+      resposta.textContent = respTexto;
+      respostasDiv.appendChild(resposta);
+    });
+
+    const responderBtn = post.querySelector('.responderBtn');
+    const responderInput = post.querySelector('.responderInput');
+
+    responderBtn.addEventListener('click', () => {
+      const respostaTexto = responderInput.value.trim();
+      if (respostaTexto) {
+        const resposta = document.createElement('div');
+        resposta.classList.add('resposta');
+        resposta.textContent = respostaTexto;
+        respostasDiv.appendChild(resposta);
+        responderInput.value = '';
+
+        addRespostaToLocalStorage(titulo, categoria, descricao, respostaTexto);
+      }
+    });
+
+    boxes[boxIndex].appendChild(post);
+  }
+
+  function savePost(titulo, categoria, descricao) {
+    const saved = JSON.parse(localStorage.getItem('postagens')) || [];
+    saved.push({ titulo, categoria, descricao, respostas: [] });
+    localStorage.setItem('postagens', JSON.stringify(saved));
+  }
+
+  function addRespostaToLocalStorage(titulo, categoria, descricao, novaResposta) {
+    const saved = JSON.parse(localStorage.getItem('postagens')) || [];
+
+    const post = saved.find(p => 
+      p.titulo === titulo && 
+      p.categoria === categoria && 
+      p.descricao === descricao
+    );
+
+    if (post) {
+      post.respostas = post.respostas || [];
+      post.respostas.push(novaResposta);
+      localStorage.setItem('postagens', JSON.stringify(saved));
+    }
+  }
+</script>
+
+
+</body>
+</html>
