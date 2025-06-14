@@ -1,0 +1,77 @@
+/* Responsividade com Media Queries */
+
+/* Para telas pequenas, 1 coluna */
+@media (max-width: 600px) {
+    .team-container {
+        grid-template-columns: 1fr; /* 1 coluna */
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+}
+
+/* Para telas médias, 2 colunas */
+@media (min-width: 601px) and (max-width: 1000px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .card img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+}
+
+/* Para telas grandes, 3 ou 4 colunas */
+@media (min-width: 1024px) {
+    .team-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas grandes */
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+}
