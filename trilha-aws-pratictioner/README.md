@@ -74,13 +74,6 @@ Adicione `logo.jpeg` na pasta `streamlit/`.
 
 ---
 
-## 🌐 Para implantar na AWS EC2:
-
-- Siga o **Manual de Implementação Streamlit com AWS Bedrock** que você enviou.  
-- Configure segurança e instância conforme instruções.
-
----
-
 ## 📝 Contato
 
 Desenvolvido por Geovanna Aparecida Nunes.  
